@@ -1,0 +1,34 @@
+(version 1)
+(rule "zone-Track"  
+    (constraint clearance (min 0.25mm))
+    (condition "A.Type =='Zone' && B.Type =='Track'"))
+(rule "zone-Pad"  
+    (constraint clearance (min 0.2mm))
+    (condition "A.Type =='Zone' && B.Type =='Pad'"))
+(rule "Pad-Pad"  
+    (constraint clearance (min 0.2mm))
+    (condition "A.Type =='Pad' && B.Type =='Pad'"))
+(rule "Via-Pad"  
+    (constraint clearance (min 0.2mm))
+    (condition "A.Type =='Via' && B.Type =='Pad'"))
+(rule "Via-Via"  
+    (constraint clearance (min 0.203mm))
+    (condition "A.Type =='Via' && B.Type =='Via'"))
+(rule "Track-Track"  
+    (constraint clearance (min 10mil))
+    (condition "A.Type =='Track' && B.Type =='Track'"))
+(rule "Track-Via"  
+    (constraint clearance (min 0.203mm))
+    (condition "A.Type =='Track' && B.Type =='Via'"))
+(rule "Track-Pad"  
+    (constraint clearance (min 0.203mm))
+    (condition "A.Type =='Track' && B.Type =='Pad'"))
+(rule "zone-Via"  
+    (constraint clearance (min 0.25mm))
+    (condition "A.Type =='Zone' && B.Type =='Via'"))
+(rule "zone-zone"  
+    (constraint clearance (min 0.203mm))
+    (condition "A.Type =='Zone' && B.Type =='zone'"))
+(rule "Edge-zone" 
+   (constraint clearance (min 0.25mm))
+   (condition "A.Layer=='Edge.Cuts' && B.Type =='zone'"))
